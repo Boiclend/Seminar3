@@ -1,10 +1,19 @@
-﻿Console.WriteLine("Введите число");
-int number = Convert.ToInt32(Console.ReadLine());
+﻿int Print(string message) {
+    Console.WriteLine(message);
+    int num = Convert.ToInt32(Console.ReadLine());
+    return num;
+}
 
-if (number > 99999) {
-    Console.WriteLine($"Число {number} не может быть палиндромом");
+int NUMBER = Print("Введите число");
+
+if (NUMBER> 99999) {
+    Console.WriteLine($"Число {NUMBER} не может быть палиндромом");
     return;
 }
+
+GetResult(NUMBER);
+
+void GetResult(int number) {
 int LastNum = number % 10;
 int SecondLastNum = number % 100;
 SecondLastNum = SecondLastNum / 10;
@@ -17,4 +26,4 @@ if (FirstNum == LastNum && SecondFirstNum == SecondLastNum) {
 } else {
     Console.WriteLine($"Число {number} не является палиндромом");
 }
-
+}
